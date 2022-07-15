@@ -50,10 +50,10 @@ echo "[+] START: Install ganache hardhat"
 npm install ganache --location=global
 npm install --save-dev hardhat --location=global
 curl -L https://foundry.paradigm.xyz | bash
-#source $HOME/.bashrc
 $HOME/.foundry/bin/foundryup
-cast --version
+$HOME/.foundry/bin/cast --version
 
+source $HOME/.bashrc
 # https://github.com/ohmyzsh/ohmyzsh
 # https://ohmyz.sh/#install
 apt install -y zsh
