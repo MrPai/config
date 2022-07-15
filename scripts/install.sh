@@ -59,7 +59,5 @@ source /root/.bashrc
 foundryup
 cast --version
 
-echo "**************************************"
-echo "[+] START: Install remote vscode"
 
 zsh
