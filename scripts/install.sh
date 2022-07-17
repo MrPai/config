@@ -57,5 +57,17 @@ source $HOME/.bashrc
 # https://github.com/ohmyzsh/ohmyzsh
 # https://ohmyz.sh/#install
 apt install -y zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -- -y
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+#apt-get install -y zsh-autosuggestions zsh-syntax-highlighting
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh/zsh-syntax-highlighting
+# source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+echo "source ${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> $HOME/.zshrc
+
+git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/zsh-autosuggestions
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+echo "source ${HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
+
 zsh
+
+
