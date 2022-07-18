@@ -68,6 +68,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/zsh-autosu
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 echo "source ${HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
 
+git config --global user.email "1164934857@qq.com"
+git config --global user.name "MrPai"
+
 zsh
 
 
