@@ -71,6 +71,8 @@ echo "source ${HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/
 git config --global user.email "1164934857@qq.com"
 git config --global user.name "MrPai"
 
+wget https://github.com/mikefarah/yq/releases/download/v4.26.1/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
+
 zsh
 
 
