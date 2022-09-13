@@ -16,3 +16,9 @@ docker images
 sudo gpasswd -a $USER docker 
 newgrp docker
 
+### mac上的docker容器访问mac宿主机
+docker.for.mac.localhost
+
+### docker前台转后台
+ctrl + p + q
+
