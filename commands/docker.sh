@@ -1,3 +1,7 @@
+启动 Docker
+sudo systemctl enable docker
+sudo systemctl start docker
+
 ##  基于docker container修改容器并生成新image
 // https://www.jb51.net/article/200508.htm
 
