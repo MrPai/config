@@ -18,3 +18,7 @@ yarn global add @open-web3/parachain-launch
 # 注意与node下的bin目录区分
 export PATH="$PATH:$(yarn global bin)"
 yarn global dir
+
+#use config.yml, generate and run parachain network
+parachain-launch generate config.yml
+docker-compose -f output/docker-compose.yml up -d --build
