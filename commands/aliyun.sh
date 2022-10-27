@@ -35,7 +35,7 @@ function create() {
     sleep 5
     Modify=$(ModifyInstanceAutoReleaseTime $InstanceId)
     printf "\n ModifyInstanceAutoReleaseTime: ${Modify} \n\n"
-    
+
     replace_ssh_config $IpAddress
 }
 
@@ -62,12 +62,13 @@ function CreateInstance() {
     # https://help.aliyun.com/document_detail/25499.html
     aliyun ecs CreateInstance \
         --InstanceName $INSTANCENAME \
-        --ImageId ubuntu_22_04_x64_20G_alibase_20220824.vhd \
+        --ImageId m-j6c6nrszdj5aog3larxl \
         --InstanceType ecs.c6.2xlarge \
         --SecurityGroupId sg-j6ccjzmccsdd0yfbjjvv \
         --VSwitchId vsw-j6cxm6w8ek0yyid0tk16j \
         --InternetChargeType PayByBandwidth \
         --InternetMaxBandwidthOut 3 \
+        --SystemDisk.Size 60 \
         --InstanceChargeType PostPaid \
         --KeyPairName ali_dev | jq -r '.InstanceId'
 }

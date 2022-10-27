@@ -62,6 +62,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/zsh-autosu
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 echo "source ${HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
 # zsh
+chsh -s /bin/zsh
 
 echo "**************************************"
 echo "[+] START: Config git"
