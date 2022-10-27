@@ -6,9 +6,11 @@ CHAIN          											:= kerria-dev
 install-all:
 	bash scripts/install-essential.sh
 	bash scripts/install.sh
-
 .PHONY: install-essential
 install-essential:
 	bash scripts/install-essential.sh
+.PHONY: aliyun-dev-ecs
+aliyun-dev-ecs:
+	ACTION=$(ACTION) bash commands/aliyun.sh
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?' Makefile | cut -d: -f1 | sort
