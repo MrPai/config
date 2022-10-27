@@ -29,14 +29,14 @@ function create() {
     sleep 1
     IpAddress=$(AllocatePublicIpAddress $InstanceId)
     printf "\n AllocatePublicIpAddress: ${IpAddress} \n\n"
+    replace_ssh_config $IpAddress
+
     sleep 3
     RequestId=$(StartInstance $InstanceId)
     printf "\n StartInstance: ${RequestId} \n\n"
     sleep 5
     Modify=$(ModifyInstanceAutoReleaseTime $InstanceId)
     printf "\n ModifyInstanceAutoReleaseTime: ${Modify} \n\n"
-
-    replace_ssh_config $IpAddress
 }
 
 function delete() {
@@ -118,11 +118,15 @@ function DeleteInstance(){
     aliyun ecs DeleteInstance --InstanceId $id --Force true
 }
 
-function ModifyInstanceAutoReleaseTime(){
+function ModifyInstanceAutoReleaseTime() {
     id="$1"
+    # time=$(date -u -v +10H +%FT%H:%M:%SZ)
+    time=`date -u +%s`
+    time=$(((${time}+3600*8)/86400*86400+1800*13))
+    time=$(date -r ${time} +%FT%H:%M:%SZ)
     # 修改实例子自动释放的时间
     # https://help.aliyun.com/document_detail/47576.html
-    aliyun ecs ModifyInstanceAutoReleaseTime --InstanceId $id --AutoReleaseTime $(date -u -v +10H +%FT%H:%M:%SZ)
+    aliyun ecs ModifyInstanceAutoReleaseTime --InstanceId $id --AutoReleaseTime $time
 }
 
 main
