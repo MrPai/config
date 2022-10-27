@@ -25,25 +25,27 @@ function main() {
 
 function create() {
     InstanceId=$(CreateInstance)
-    printf "\n CreateInstance-InstanceId: ${InstanceId} \n\n"
+    printf "\n CreateInstance: ${InstanceId} \n\n"
     sleep 1
     IpAddress=$(AllocatePublicIpAddress $InstanceId)
-    printf "\n AllocatePublicIpAddress-IpAddress: ${IpAddress} \n\n"
-    sleep 3
-    Modify=$(ModifyInstanceAutoReleaseTime $InstanceId)
-    printf "\n ModifyInstanceAutoReleaseTime: ${Modify} \n\n"
+    printf "\n AllocatePublicIpAddress: ${IpAddress} \n\n"
     sleep 3
     RequestId=$(StartInstance $InstanceId)
     printf "\n StartInstance: ${RequestId} \n\n"
-
+    sleep 5
+    Modify=$(ModifyInstanceAutoReleaseTime $InstanceId)
+    printf "\n ModifyInstanceAutoReleaseTime: ${Modify} \n\n"
+    
     replace_ssh_config $IpAddress
 }
 
 function delete() {
     InstanceId=$(DescribeInstances)
-    printf "\n DescribeInstances-InstanceId: ${InstanceId} \n\n"
+    printf "\n DescribeInstances: ${InstanceId} \n\n"
     RequestId=$(DeleteInstance $InstanceId)
-    printf "\n DeleteInstance-RequestId: ${RequestId} \n\n"
+    printf "\n DeleteInstance: ${RequestId} \n\n"
+
+    rm -f ~/.ssh/known_hosts*
 }
 
 function replace_ssh_config(){

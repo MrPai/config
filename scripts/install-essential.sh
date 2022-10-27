@@ -7,7 +7,7 @@ apt update
 apt install -y build-essential
 #sudo apt update && sudo apt install -y cmake pkg-config libssl-dev git build-essential curl libpq-dev
 #（clang libclang-dev libmysqlclient-dev）
-apt install -y git clang curl libssl-dev llvm libudev-dev make protobuf-compiler wget nano
+apt install -y git clang curl libssl-dev llvm libudev-dev make protobuf-compiler wget nano pkg-config
 
 echo "**************************************"
 echo "[+] START: Install Rust"
