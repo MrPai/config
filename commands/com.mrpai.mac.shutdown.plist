@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>Label</key><string>mac-shutdown</string>
+
+<key>ProgramArguments</key>
+<array>
+  <string>/Users/zhulipai/zlp_workfiles/codes/mrpai/config/commands/mac_shutdown.sh</string>
+</array>
+
+<key>RunAtLoad</key>
+<true/>
+
+<key>StandardOutPath</key>
+<string>/Users/zhulipai/Documents/mac-shutdown.log</string>
+
+<key>StandardErrorPath</key>
+<string>/Users/zhulipai/Documents/mac-shutdown.err</string>
+
+</dict>
+</plist>
