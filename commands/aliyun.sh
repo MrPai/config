@@ -18,6 +18,8 @@ function main() {
             ;;
         delete) delete
             ;;
+        help) echo "help"
+            ;;
     esac
 }
 
@@ -33,6 +35,8 @@ function create() {
     sleep 3
     RequestId=$(StartInstance $InstanceId)
     printf "\n StartInstance: ${RequestId} \n\n"
+
+    replace_ssh_config $IpAddress
 }
 
 function delete() {
@@ -40,6 +44,13 @@ function delete() {
     printf "\n DescribeInstances-InstanceId: ${InstanceId} \n\n"
     RequestId=$(DeleteInstance $InstanceId)
     printf "\n DeleteInstance-RequestId: ${RequestId} \n\n"
+}
+
+function replace_ssh_config(){
+    # sed -i '' 's/HostName.*$/HostName 47.242.123.47/g' ~/.ssh/config && rm -f ~/.ssh/known_hosts*
+    ip="$1"
+    old=$(awk "/Host ali_dev/{getline a;print a}" $HOME/.ssh/config)
+    sed -i "" "s/$old/HostName $ip/g" $HOME/.ssh/config
 }
 
 function CreateInstance() {
