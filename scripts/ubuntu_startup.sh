@@ -5,7 +5,6 @@
 # sudo chmod 744 /root/config/scripts/ubuntu_startup.sh
 # sudo chmod 664 /root/config/assets/mrpai-ubuntu.service
 # sudo ln -s /root/config/assets/mrpai-ubuntu.service /etc/systemd/system/mrpai-ubuntu.service
-# sudo chmod 777 /etc/systemd/system/mrpai-ubuntu.service
 # sudo systemctl daemon-reload
 # sudo systemctl enable mrpai-ubuntu.service
 
