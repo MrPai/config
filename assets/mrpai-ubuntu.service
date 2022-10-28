@@ -1,0 +1,11 @@
+[Unit]
+Description=Service for mrpai dev init
+Documentation=https://github.com/MrPai/config
+After=network.service
+
+[Service]
+ExecStart=/root/config/scripts/ubuntu_startup.sh
+TimeoutStopSec=5
+
+[Install]
+WantedBy=default.target

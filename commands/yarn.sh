@@ -5,3 +5,9 @@
 yarn cache clean --all
 yarn install
 YARN_CHECKSUM_BEHAVIOR=update yarn
+
+# Error log: 
+# YN0001: │ Error [ERR_STREAM_PREMATURE_CLOSE]: Premature close
+# FIX: 
+# https://github.com/yarnpkg/berry/issues/3597#issuecomment-955872793
+yarn set version latest
