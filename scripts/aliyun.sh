@@ -18,6 +18,8 @@ function main() {
             ;;
         delete) delete
             ;;
+        modify_release_time) modify_release_time
+            ;;
         help) echo "help"
             ;;
     esac
@@ -25,25 +27,35 @@ function main() {
 
 function create() {
     InstanceId=$(CreateInstance)
-    printf "\n CreateInstance: ${InstanceId} \n\n"
+    printf "\n CreateInstance: ${InstanceId} \n"
     sleep 1
     IpAddress=$(AllocatePublicIpAddress $InstanceId)
-    printf "\n AllocatePublicIpAddress: ${IpAddress} \n\n"
+    printf "\n AllocatePublicIpAddress: ${IpAddress} \n"
     replace_ssh_config $IpAddress
 
     sleep 3
     RequestId=$(StartInstance $InstanceId)
-    printf "\n StartInstance: ${RequestId} \n\n"
+    printf "\n StartInstance \n"
     sleep 5
     Modify=$(ModifyInstanceAutoReleaseTime $InstanceId)
-    printf "\n ModifyInstanceAutoReleaseTime: ${Modify} \n\n"
+    printf "\n ModifyInstanceAutoReleaseTime \n"
 }
 
 function delete() {
     InstanceId=$(DescribeInstances)
-    printf "\n DescribeInstances: ${InstanceId} \n\n"
+    printf "\n DescribeInstances: ${InstanceId} \n"
     RequestId=$(DeleteInstance $InstanceId)
-    printf "\n DeleteInstance: ${RequestId} \n\n"
+    printf "\n DeleteInstance \n"
+
+    rm -f ~/.ssh/known_hosts*
+}
+
+function modify_release_time() {
+    InstanceId=$(DescribeInstances)
+    printf "\n DescribeInstances: ${InstanceId} \n"
+    sleep 3
+    RequestId=$(ModifyInstanceAutoReleaseTime $InstanceId)
+    printf "\n ModifyInstanceAutoReleaseTime \n"
 
     rm -f ~/.ssh/known_hosts*
 }
