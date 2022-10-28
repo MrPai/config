@@ -74,7 +74,7 @@ function CreateInstance() {
     # https://help.aliyun.com/document_detail/25499.html
     aliyun ecs CreateInstance \
         --InstanceName $INSTANCENAME \
-        --ImageId m-j6c6nrszdj5aog3larxl \
+        --ImageId m-j6c97r3tw1zmo1layl9y \
         --InstanceType ecs.c6.2xlarge \
         --SecurityGroupId sg-j6ccjzmccsdd0yfbjjvv \
         --VSwitchId vsw-j6cxm6w8ek0yyid0tk16j \

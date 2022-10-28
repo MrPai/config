@@ -8,5 +8,6 @@
 # sudo systemctl daemon-reload
 # sudo systemctl enable mrpai-ubuntu.service
 
+# 20221028 log: test failed, can not auto run when start from aliyun dev image.
 cd $HOME/config && git pull
 cd $HOME/parallel && git pull
