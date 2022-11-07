@@ -47,7 +47,7 @@ function delete() {
     RequestId=$(DeleteInstance $InstanceId)
     printf "\n DeleteInstance \n"
 
-    rm -f ~/.ssh/known_hosts*
+    # rm -f ~/.ssh/known_hosts*
 }
 
 function modify_release_time() {
@@ -57,7 +57,7 @@ function modify_release_time() {
     RequestId=$(ModifyInstanceAutoReleaseTime $InstanceId)
     printf "\n ModifyInstanceAutoReleaseTime \n"
 
-    rm -f ~/.ssh/known_hosts*
+    # rm -f ~/.ssh/known_hosts*
 }
 
 function replace_ssh_config(){
@@ -74,7 +74,7 @@ function CreateInstance() {
     # https://help.aliyun.com/document_detail/25499.html
     aliyun ecs CreateInstance \
         --InstanceName $INSTANCENAME \
-        --ImageId m-j6c97r3tw1zmo1layl9y \
+        --ImageId m-j6cgd384kfevcbfwmr6k \
         --InstanceType ecs.c6.2xlarge \
         --SecurityGroupId sg-j6ccjzmccsdd0yfbjjvv \
         --VSwitchId vsw-j6cxm6w8ek0yyid0tk16j \
