@@ -15,9 +15,9 @@ git checkout tags/2.9.6
 # checkout branch
 git checkout upstream/release-acala-2.9.6
 
-
 # push to remote/origin
 git push origin HEAD:refs/heads/release-acala-2.9.6
+git push upstream test/weight-time
 
 # set config
 git config user.email "1164934857@qq.com"
