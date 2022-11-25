@@ -47,7 +47,7 @@ function delete() {
     RequestId=$(DeleteInstance $InstanceId)
     printf "\n DeleteInstance \n"
 
-    # rm -f ~/.ssh/known_hosts*
+    rm -f ~/.ssh/known_hosts*
 }
 
 function modify_release_time() {

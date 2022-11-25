@@ -28,3 +28,7 @@ git config --global user.name "MrPai"
 
 # list config
 git config --list
+
+
+# 撤销提交的commit，保留修改
+git reset --soft HEAD^1

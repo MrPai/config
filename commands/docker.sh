@@ -48,3 +48,10 @@ docker logs -f output_parachain-2012-0_1 2>&1 | grep "xcm::convert"
 
 # 运行
 docker exec -it container /bin/bash
+
+# Start containers automatically
+https://docs.docker.com/config/containers/start-containers-automatically/
+docker run -d --restart unless-stopped redis
+docker update --restart unless-stopped redis
+docker update --restart unless-stopped $(docker ps -q)
+
