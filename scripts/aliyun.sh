@@ -33,7 +33,7 @@ function create() {
     printf "\n AllocatePublicIpAddress: ${IpAddress} \n"
     replace_ssh_config $IpAddress
 
-    sleep 3
+    sleep 7
     RequestId=$(StartInstance $InstanceId)
     printf "\n StartInstance \n"
     sleep 5
@@ -74,7 +74,7 @@ function CreateInstance() {
     # https://help.aliyun.com/document_detail/25499.html
     aliyun ecs CreateInstance \
         --InstanceName $INSTANCENAME \
-        --ImageId m-j6cehs3r1sz4urfe1uqo \
+        --ImageId m-j6c746emzszo8ys50qow \
         --InstanceType ecs.c6.2xlarge \
         --SecurityGroupId sg-j6ccjzmccsdd0yfbjjvv \
         --VSwitchId vsw-j6cxm6w8ek0yyid0tk16j \
