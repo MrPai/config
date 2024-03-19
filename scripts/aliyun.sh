@@ -80,7 +80,7 @@ function CreateInstance() {
         --VSwitchId vsw-j6cxm6w8ek0yyid0tk16j \
         --InternetChargeType PayByBandwidth \
         --InternetMaxBandwidthOut 3 \
-        --SystemDisk.Size 60 \
+        --SystemDisk.Size 40 \
         --InstanceChargeType PostPaid \
         --KeyPairName ali_dev | jq -r '.InstanceId'
 }
